@@ -1,0 +1,43 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #fff; 
+  width: 100%;
+  padding: 7px;
+  height: 240px;
+  margin-bottom: 8px;
+}
+.card .caption {
+  color: #888;
+  font-size: 15px;
+}
+.card .caption .right {
+  float: right;
+}
+.card .caption .right span {
+  margin-left: 8px;
+}
+.card .caption .right span i {
+  margin-right: 3px;
+}
+.card .caption .left {
+  float: left;
+}
+.author {
+  height: 50px;
+}
+.images {
+  width: 100%;
+  height: 200px;
+}
+.author a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0000FF;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
