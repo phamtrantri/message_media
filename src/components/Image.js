@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router';
 import '../styles/images.css';
-class Images extends Component {
+import PropTypes from 'prop-types';
+class Image extends Component {
   render() {
     const { image } = this.props;
 
@@ -13,7 +14,7 @@ class Images extends Component {
           </Link>
           <div className="caption">
             <div className="left">
-            <span><i className="fa fa-paperclip"></i></span>
+              <span><i className="fa fa-paperclip"></i></span>
             </div>
             <div className="right">
               <span><i className="fa fa-eye"></i>1204</span>
@@ -30,5 +31,9 @@ class Images extends Component {
     )
   }
 }
+Image.propTypes = {
+  image: PropTypes.object.isRequired
+}
 
-export default Images
+
+export default Image

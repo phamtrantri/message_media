@@ -4,7 +4,7 @@
   clear: both;
 }
 .column {
-  padding: 5px 5px;
+  padding: 5px 15px;
 }
 /* 
   ##Device = Desktops
@@ -64,7 +64,9 @@
     float: left;
     width: 50%;
   }
-
+  span {
+    font-size: 12px;
+  }
   
 }
 
@@ -73,11 +75,23 @@
   ##Screen = B/w 320px to 479px
 */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 331px) and (max-width: 480px) {
   .column {
     float: left;
     width: 50%;
   }
-
+  span {
+    font-size: 10px;
+  }
+  
+}
+@media (min-width: 0px) and (max-width: 330px) {
+  .column {
+    float: left;
+    width: 50%;
+  }
+  span {
+    font-size: 8px;
+  }
   
 }

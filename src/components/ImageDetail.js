@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { API_KEY, ROOT_URL } from '../commons/constants';
+import Loading from './Loading';
 class ImageDetail extends Component {
   constructor(props) {
     super(props);
@@ -29,10 +30,9 @@ class ImageDetail extends Component {
 
   render() {
     const { image } = this.state;
-    if (!image) return <div>Loading...</div>
+    if (!image) return <Loading />
 
     const fullScreenImage = {
-
       backgroundImage: `url(${image.images.original.webp})`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -41,10 +41,9 @@ class ImageDetail extends Component {
     }
     return (
       <div style={fullScreenImage}>
-      
+
       </div>
     )
   }
 }
-
 export default ImageDetail

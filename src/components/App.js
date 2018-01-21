@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import '../styles/app.css';
 import axios from 'axios';
 import { PAGE_SIZE, API_KEY, ROOT_URL, TRENDING } from '../commons/constants';
-import Images from './Images';
+import Image from './Image';
 import Pagination from "react-js-pagination/dist/Pagination";
+import Loading from './Loading';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -52,9 +53,9 @@ class App extends Component {
             itemsCountPerPage={PAGE_SIZE}
             totalItemsCount={totalCount}
             pageRangeDisplayed={5}
-            innerClass="news-pagination"
-            itemClass="news-pagination-li"
-            activeClass="news-pagination-li-active"
+            innerClass="pagination"
+            itemClass="pagination-li"
+            activeClass="pagination-li-active"
             firstPageText="First"
             lastPageText="Last"
             prevPageText="Prev"
@@ -71,13 +72,16 @@ class App extends Component {
   render() {
     const { data } = this.state;
     if (!data) return <div>Not found.</div>
-    if (data.length === 0) return <div>Loading...</div>
+    if (data.length === 0) {
+      return <Loading />
+    }
+
     return (
-      <main>
+      <section>
         <div className="row">
           {
             data.map((elem) => {
-              return <Images key={elem.id} image={elem} />
+              return <Image key={elem.id} image={elem} />
             })
           }
         </div>
@@ -85,7 +89,7 @@ class App extends Component {
         <div className="row text-center">
           {this.renderPagination()}
         </div>
-      </main>
+      </section>
 
     );
   }
